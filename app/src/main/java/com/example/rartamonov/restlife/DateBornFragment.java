@@ -16,11 +16,14 @@ import java.util.Calendar;
 
 public class DateBornFragment extends Fragment{
 
+    final private int averageDurationLife = 65;
     private static final int REQUEST_WEIGHT = 1;
     private static final int REQUEST_ANOTHER_ONE = 2;
+    public static final String TAG_ARRAY="yearsArray";
     private Context context;
     private FragmentActivity fragmentActivity;
     TextView tv;
+    private OnFragmentInteractionListener mListener;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -90,7 +93,28 @@ public class DateBornFragment extends Fragment{
     }
 
     public void doSomethingAfterSelectionDate(int year, int month, int day){
-      int a=1;
+        String[] years = new String[averageDurationLife];
+        int currentYear = year;
+        for (int i=0; i<averageDurationLife; i++){
+            years[i]= String.valueOf(currentYear);
+            currentYear++;
+        }
+
+        mListener.onFragmentInteraction(years);
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            mListener = (OnFragmentInteractionListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString()
+                    + " должен реализовывать интерфейс OnFragmentInteractionListener");
+        }
+    }
+    interface OnFragmentInteractionListener {
+
+        void onFragmentInteraction(String[] link);
+    }
 }

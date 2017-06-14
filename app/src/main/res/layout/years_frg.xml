@@ -4,14 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <FrameLayout
-        android:id="@+id/date_born"
+    <GridView
+        android:id="@+id/gvMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </FrameLayout>
-    <FrameLayout
-        android:id="@+id/years"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </FrameLayout>
+    </GridView>
 </LinearLayout>
