@@ -1,7 +1,7 @@
 package com.example.rartamonov.restlife;
 
 import android.app.Activity;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -57,7 +57,7 @@ public class DateBornFragment extends Fragment{
         if (resultCode == Activity.RESULT_OK) {
             switch (requestCode) {
                 case REQUEST_WEIGHT:
-                    int weight = data.getIntExtra(DatePicker.TAG_WEIGHT_SELECTED, -1);
+                    String date = data.getStringExtra(DatePicker.TAG_DATE_SELECTED);
                     //используем полученные результаты
                     //...
                     break;
@@ -71,7 +71,7 @@ public class DateBornFragment extends Fragment{
 
     public void openDatePicker(){
         DialogFragment dateDialog = new DatePicker();
-        dateDialog.setTargetFragment(dateDialog, REQUEST_WEIGHT);
+        dateDialog.setTargetFragment(this, REQUEST_WEIGHT);
         dateDialog.show(fragmentActivity.getSupportFragmentManager(), dateDialog.getClass().getName());
     }
 

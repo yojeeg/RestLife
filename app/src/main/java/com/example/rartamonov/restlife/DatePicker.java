@@ -12,7 +12,7 @@ import java.util.Calendar;
 
 public class DatePicker extends DialogFragment implements DatePickerDialog.OnDateSetListener{
 
-    public static final String TAG_WEIGHT_SELECTED = "weight";
+    public static final String TAG_DATE_SELECTED = "";
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class DatePicker extends DialogFragment implements DatePickerDialog.OnDat
         TextView tv = (TextView) getActivity().findViewById(R.id.tvDate);
         tv.setText(day + "-" + month + "-" + year);
         Intent intent = new Intent();
-        intent.putExtra(TAG_WEIGHT_SELECTED, day + "-" + month + "-" + year);
+        intent.putExtra(TAG_DATE_SELECTED, day + "-" + month + "-" + year);
         getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
     }
 
