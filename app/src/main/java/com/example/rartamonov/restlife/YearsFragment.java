@@ -20,7 +20,7 @@ public class YearsFragment extends Fragment{
 
     //String[] data = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"};
 
-    GridView gvMain;
+    GridView gvYears;
     ArrayAdapter<String> adapter;
 
     @Override
@@ -34,7 +34,7 @@ public class YearsFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.years_frg, null);
-        gvMain = (GridView) v.findViewById(R.id.gvMain);
+        gvYears = (GridView) v.findViewById(R.id.gvYears);
 
         return v;
     }
@@ -42,16 +42,16 @@ public class YearsFragment extends Fragment{
     public void showGrid(String[] years){
 
         adapter = new ArrayAdapter<String>(context, R.layout.years_item, R.id.tvText, years);
-        gvMain.setAdapter(adapter);
+        gvYears.setAdapter(adapter);
         adjustGridView();
 
     }
 
     private void adjustGridView() {
-        gvMain.setNumColumns(GridView.AUTO_FIT);
-        gvMain.setColumnWidth(80);
-        gvMain.setVerticalSpacing(5);
-        gvMain.setHorizontalSpacing(5);
-        gvMain.setStretchMode(GridView.STRETCH_COLUMN_WIDTH );
+        gvYears.setNumColumns(GridView.AUTO_FIT);
+        gvYears.setColumnWidth(80);
+        gvYears.setVerticalSpacing(5);
+        gvYears.setHorizontalSpacing(5);
+        gvYears.setStretchMode(GridView.STRETCH_COLUMN_WIDTH );
     }
 }
