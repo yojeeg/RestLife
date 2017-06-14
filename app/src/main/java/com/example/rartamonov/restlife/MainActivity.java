@@ -29,9 +29,4 @@ public class MainActivity extends AppCompatActivity implements DateBornFragment.
         }
     }
 
-//    public void onClick(View v) {
-//        DialogFragment dateDialog = new DatePicker();
-//        dateDialog.show(getSupportFragmentManager(), "datePicker");
-//    }
-
 }

@@ -13,12 +13,7 @@ import android.widget.GridView;
 
 public class YearsFragment extends Fragment{
 
-    final private int AverageDurationLife = 65;
     private Context context;
-
-    private static final int REQUEST_ARRAY = 1;
-
-    //String[] data = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"};
 
     GridView gvYears;
     ArrayAdapter<String> adapter;
@@ -27,8 +22,6 @@ public class YearsFragment extends Fragment{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context = getContext();
-        DateBornFragment dateBornFragment = new DateBornFragment();
-        dateBornFragment.setTargetFragment(this, REQUEST_ARRAY);
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

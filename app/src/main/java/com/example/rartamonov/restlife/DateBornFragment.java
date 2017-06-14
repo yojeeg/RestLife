@@ -19,7 +19,6 @@ public class DateBornFragment extends Fragment{
     final private int averageDurationLife = 65;
     private static final int REQUEST_WEIGHT = 1;
     private static final int REQUEST_ANOTHER_ONE = 2;
-    public static final String TAG_ARRAY="yearsArray";
     private Context context;
     private FragmentActivity fragmentActivity;
     TextView tv;
@@ -60,7 +59,6 @@ public class DateBornFragment extends Fragment{
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        //String dateFormat = "dd/MM/yyyy hh:mm:ss.SSS";
         String dateFormat = "dd/MM/yyyy";
 
         SimpleDateFormat formatter = new SimpleDateFormat(dateFormat);
