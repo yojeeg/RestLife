@@ -7,5 +7,6 @@
     <color name="textGridTransperent1">#525252</color>
     <color name="textGridTransperent2">#757575</color>
     <color name="textGridTransperent3">#8C8C8C</color>
+    <color name="textGridTransperent4">#B8B8B8</color>
     <color name="textGridCurrent">#FF0000</color>
 </resources>

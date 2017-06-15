@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">RestLife</string>
-    <string name="choose_date">Выберите дату</string>
-    <string name="ready">Готово</string>
+    <string name="app_name">WasteLife</string>
+    <string name="choose_date">Choose date</string>
+    <string name="ready">Done</string>
+    <string name="born_text_label">Birthdate</string>
 </resources>
