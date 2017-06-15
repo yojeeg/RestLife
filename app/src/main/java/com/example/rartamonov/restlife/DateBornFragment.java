@@ -16,7 +16,7 @@ import java.util.Calendar;
 
 public class DateBornFragment extends Fragment{
 
-    final private int averageDurationLife = 65;
+    final private int averageDurationLife = 80;
     private static final int REQUEST_WEIGHT = 1;
     private static final int REQUEST_ANOTHER_ONE = 2;
     private Context context;

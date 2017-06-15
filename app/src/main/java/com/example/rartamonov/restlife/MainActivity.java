@@ -21,11 +21,11 @@ public class MainActivity extends AppCompatActivity implements DateBornFragment.
 
     @Override
     public void onFragmentInteraction(String[] link) {
-        YearsFragment fragment = (YearsFragment) getSupportFragmentManager()
+        YearsFragment yearsFragment = (YearsFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.years);
         //if (fragment != null && fragment.isInLayout()) {
-        if (fragment != null) {
-            fragment.showGrid(link);
+        if (yearsFragment != null) {
+            yearsFragment.showGrid(link);
         }
     }
 

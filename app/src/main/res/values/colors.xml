@@ -3,4 +3,9 @@
     <color name="colorPrimary">#A9A9A9</color>
     <color name="colorPrimaryDark">#808080</color>
     <color name="colorAccent">#666666</color>
+    <color name="textGrid">#000000</color>
+    <color name="textGridTransperent1">#525252</color>
+    <color name="textGridTransperent2">#757575</color>
+    <color name="textGridTransperent3">#8C8C8C</color>
+    <color name="textGridCurrent">#FF0000</color>
 </resources>
