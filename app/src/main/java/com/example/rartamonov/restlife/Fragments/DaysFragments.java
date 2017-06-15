@@ -1,5 +1,6 @@
 package com.example.rartamonov.restlife.Fragments;
 
+import android.graphics.Paint;
 import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -12,10 +13,14 @@ import android.widget.TextView;
 
 import com.example.rartamonov.restlife.R;
 
+import java.util.Calendar;
+
 public class DaysFragments extends Fragment{
 
     private Context context;
     private TableLayout tableLayout;
+    final private Calendar c = Calendar.getInstance();
+    final private int currentMonth = c.get(Calendar.MONTH);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,6 +43,12 @@ public class DaysFragments extends Fragment{
                     ViewGroup.LayoutParams.WRAP_CONTENT));
             for (int j=1;j<=31;j++){
                 TextView textView = new TextView(context);
+                textView.setPadding(5,2,5,2);
+                textView.setTextColor(getResources().getColor(R.color.textGrid,context.getTheme()));
+                textView.setTextSize(18);
+                if (i<currentMonth+1){
+                    makeTextStrike(textView);
+                }
                 if ((i==2)&&(j>28)){
                     textView.setText("");
                 } else {
@@ -60,5 +71,9 @@ public class DaysFragments extends Fragment{
             }
             tableLayout.addView(tableRow,i-1);
         }
+    }
+
+    public void makeTextStrike(TextView textView){
+        textView.setPaintFlags(textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
     }
 }
