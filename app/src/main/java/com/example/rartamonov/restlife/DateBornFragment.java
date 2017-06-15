@@ -22,7 +22,7 @@ public class DateBornFragment extends Fragment{
     private Context context;
     private FragmentActivity fragmentActivity;
     TextView tv;
-    private OnFragmentInteractionListener mListener;
+    private OnYearsFragmentInteractionListener mListener;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -98,21 +98,21 @@ public class DateBornFragment extends Fragment{
             currentYear++;
         }
 
-        mListener.onFragmentInteraction(years);
+        mListener.onYearsFragmentInteraction(years);
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         try {
-            mListener = (OnFragmentInteractionListener) context;
+            mListener = (OnYearsFragmentInteractionListener) context;
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString()
                     + " должен реализовывать интерфейс OnFragmentInteractionListener");
         }
     }
-    interface OnFragmentInteractionListener {
+    interface OnYearsFragmentInteractionListener {
 
-        void onFragmentInteraction(String[] link);
+        void onYearsFragmentInteraction(String[] link);
     }
 }

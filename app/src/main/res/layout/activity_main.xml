@@ -14,14 +14,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </FrameLayout>
-    <FrameLayout
-        android:id="@+id/months"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </FrameLayout>
-    <FrameLayout
-        android:id="@+id/days"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </FrameLayout>
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <FrameLayout
+            android:id="@+id/months"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="9">
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/days"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+        </FrameLayout>
+    </LinearLayout>
+
 </LinearLayout>

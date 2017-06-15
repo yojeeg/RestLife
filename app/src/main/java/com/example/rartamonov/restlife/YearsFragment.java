@@ -22,10 +22,23 @@ public class YearsFragment extends Fragment{
     final Calendar c = Calendar.getInstance();
     int currentYear = c.get(Calendar.YEAR);
 
+    private OnMonthsFragmentInteractionListener mListener;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context = getContext();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            mListener = (OnMonthsFragmentInteractionListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString()
+                    + " должен реализовывать интерфейс OnYearsFragmentInteractionListener");
+        }
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -78,6 +91,7 @@ public class YearsFragment extends Fragment{
         };
         gvYears.setAdapter(adapter);
         adjustGridView();
+        mListener.onMonthsFragmentInteraction();
 
     }
 
@@ -95,4 +109,8 @@ public class YearsFragment extends Fragment{
         gvYears.setStretchMode(GridView.STRETCH_COLUMN_WIDTH );
     }
 
+    interface OnMonthsFragmentInteractionListener {
+
+        void onMonthsFragmentInteraction();
+    }
 }
