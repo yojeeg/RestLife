@@ -1,4 +1,4 @@
-package com.example.rartamonov.restlife;
+package com.example.rartamonov.restlife.Fragments;
 
 import android.app.Activity;
 import android.support.v4.app.Fragment;
@@ -11,6 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.rartamonov.restlife.Dialogs.DatePicker;
+import com.example.rartamonov.restlife.R;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -18,7 +22,6 @@ public class DateBornFragment extends Fragment{
 
     final private int averageDurationLife = 80;
     private static final int REQUEST_WEIGHT = 1;
-    private static final int REQUEST_ANOTHER_ONE = 2;
     private Context context;
     private FragmentActivity fragmentActivity;
     TextView tv;
@@ -73,13 +76,14 @@ public class DateBornFragment extends Fragment{
                     String res = formatter.format(calendar.getTime());
                     tv.setText(res);
 
-                    doSomethingAfterSelectionDate(calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH)+1, calendar.get(Calendar.DAY_OF_MONTH));
+                    // выведем список лет
+                    showYears(calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH)+1, calendar.get(Calendar.DAY_OF_MONTH));
 
                     break;
-                case REQUEST_ANOTHER_ONE:
-                    //...
-                    break;
-                //обработка других requestCode
+//                case REQUEST_ANOTHER_ONE:
+//                    //...
+//                    break;
+//                //обработка других requestCode
             }
         }
     }
@@ -90,7 +94,7 @@ public class DateBornFragment extends Fragment{
         dateDialog.show(fragmentActivity.getSupportFragmentManager(), dateDialog.getClass().getName());
     }
 
-    public void doSomethingAfterSelectionDate(int year, int month, int day){
+    public void showYears(int year, int month, int day){
         String[] years = new String[averageDurationLife];
         int currentYear = year;
         for (int i=0; i<averageDurationLife; i++){

@@ -1,4 +1,4 @@
-package com.example.rartamonov.restlife;
+package com.example.rartamonov.restlife.Fragments;
 
 import android.content.Context;
 import android.graphics.Paint;
@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.TextView;
+
+import com.example.rartamonov.restlife.R;
 
 import java.util.Calendar;
 

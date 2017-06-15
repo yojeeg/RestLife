@@ -1,7 +1,9 @@
-package com.example.rartamonov.restlife;
+package com.example.rartamonov.restlife.Fragments;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.rartamonov.restlife.R;
 
 public class MainActivity extends AppCompatActivity implements DateBornFragment.OnYearsFragmentInteractionListener, YearsFragment.OnMonthsFragmentInteractionListener {
 
@@ -13,11 +15,13 @@ public class MainActivity extends AppCompatActivity implements DateBornFragment.
         android.support.v4.app.Fragment dateBornFragment = new DateBornFragment();
         android.support.v4.app.Fragment yearsFragment = new YearsFragment();
         android.support.v4.app.Fragment monthsFragment = new MonthsFragment();
+        android.support.v4.app.Fragment daysFragment = new DaysFragments();
 
         android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.date_born, dateBornFragment);
         fragmentTransaction.add(R.id.years, yearsFragment);
         fragmentTransaction.add(R.id.months, monthsFragment);
+        fragmentTransaction.add(R.id.days, daysFragment);
         fragmentTransaction.commit();
     }
 
