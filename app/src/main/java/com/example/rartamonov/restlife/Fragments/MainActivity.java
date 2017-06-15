@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.example.rartamonov.restlife.R;
 
-public class MainActivity extends AppCompatActivity implements DateBornFragment.OnYearsFragmentInteractionListener, YearsFragment.OnMonthsFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements DateBornFragment.OnYearsFragmentInteractionListener, YearsFragment.OnMonthsFragmentInteractionListener, MonthsFragment.OnDaysFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,15 @@ public class MainActivity extends AppCompatActivity implements DateBornFragment.
                 .findFragmentById(R.id.months);
         if (monthsFragment != null){
             monthsFragment.showGrid();
+        }
+    }
+
+    @Override
+    public void onDaysFragmentInteraction() {
+        DaysFragments daysFragments = (DaysFragments) getSupportFragmentManager()
+                .findFragmentById(R.id.days);
+        if(daysFragments != null){
+            daysFragments.showTableDays();
         }
     }
 }

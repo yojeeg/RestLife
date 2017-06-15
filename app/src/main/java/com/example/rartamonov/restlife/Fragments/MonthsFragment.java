@@ -23,6 +23,8 @@ public class MonthsFragment extends Fragment {
 
     private GridView gvMonths;
 
+    private OnDaysFragmentInteractionListener mListener;
+
     private String[] months = new String[]{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
 
     final private Calendar c = Calendar.getInstance();
@@ -50,6 +52,16 @@ public class MonthsFragment extends Fragment {
         return v;
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            mListener = (OnDaysFragmentInteractionListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString()
+                    + " должен реализовывать интерфейс OnDaysFragmentInteractionListener");
+        }
+    }
 
     public void showGrid(){
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, R.layout.months_item, R.id.tvText, months){
@@ -72,6 +84,7 @@ public class MonthsFragment extends Fragment {
         };
         gvMonths.setAdapter(adapter);
         adjustGridView();
+        mListener.onDaysFragmentInteraction();
     }
 
     public void makeTextStrike(TextView textView){
@@ -84,5 +97,10 @@ public class MonthsFragment extends Fragment {
         gvMonths.setVerticalSpacing(5);
         gvMonths.setHorizontalSpacing(5);
         gvMonths.setStretchMode(GridView.STRETCH_COLUMN_WIDTH );
+    }
+
+    interface OnDaysFragmentInteractionListener {
+
+        void onDaysFragmentInteraction();
     }
 }
