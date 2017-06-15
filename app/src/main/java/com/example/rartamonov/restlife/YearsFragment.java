@@ -19,8 +19,8 @@ public class YearsFragment extends Fragment{
 
     GridView gvYears;
     ArrayAdapter<String> adapter;
-    final Calendar c = Calendar.getInstance();
-    int currentYear = c.get(Calendar.YEAR);
+    final private Calendar c = Calendar.getInstance();
+    final private int currentYear = c.get(Calendar.YEAR);
 
     private OnMonthsFragmentInteractionListener mListener;
 
@@ -58,30 +58,28 @@ public class YearsFragment extends Fragment{
                 String valueCell = getItem(position).toString();
 
                 View root = super.getView(position, convertView, parent);
+                TextView textView = (TextView) root.findViewById(R.id.tvText);
+                // сбросим все флаги
+                textView.setPaintFlags( textView.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
+
                 if (valueCell.equals(String.valueOf(currentYear))) {
-                    TextView textView = (TextView) root.findViewById(R.id.tvText);
                     textView.setTextColor(getResources().getColor(R.color.textGridCurrent, context.getTheme()));
                     makeTextStrike(valueCell, currentYear, textView);
                 } else {
                     if (position <= 71) {
-                        TextView textView = (TextView) root.findViewById(R.id.tvText);
                         //textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
                         textView.setTextColor(getResources().getColor(R.color.textGrid, context.getTheme()));
                         makeTextStrike(valueCell, currentYear, textView);
                     } else if (position > 71 && position <= 73) {
-                        TextView textView = (TextView) root.findViewById(R.id.tvText);
                         textView.setTextColor(getResources().getColor(R.color.textGridTransperent1, context.getTheme()));
                         makeTextStrike(valueCell, currentYear, textView);
                     } else if (position > 73 && position <= 75) {
-                        TextView textView = (TextView) root.findViewById(R.id.tvText);
                         textView.setTextColor(getResources().getColor(R.color.textGridTransperent2, context.getTheme()));
                         makeTextStrike(valueCell, currentYear, textView);
                     } else if (position > 75 && position <= 77) {
-                        TextView textView = (TextView) root.findViewById(R.id.tvText);
                         textView.setTextColor(getResources().getColor(R.color.textGridTransperent3, context.getTheme()));
                         makeTextStrike(valueCell, currentYear, textView);
                     } else if (position > 77) {
-                        TextView textView = (TextView) root.findViewById(R.id.tvText);
                         textView.setTextColor(getResources().getColor(R.color.textGridTransperent4, context.getTheme()));
                         makeTextStrike(valueCell, currentYear, textView);
                     }
@@ -103,7 +101,7 @@ public class YearsFragment extends Fragment{
 
     private void adjustGridView() {
         gvYears.setNumColumns(GridView.AUTO_FIT);
-        gvYears.setColumnWidth(80);
+        gvYears.setColumnWidth(150);
         gvYears.setVerticalSpacing(5);
         gvYears.setHorizontalSpacing(5);
         gvYears.setStretchMode(GridView.STRETCH_COLUMN_WIDTH );

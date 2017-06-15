@@ -3,7 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:padding="5dp"
+    android:orientation="vertical"
+    android:weightSum="100">
     <FrameLayout
         android:id="@+id/date_born"
         android:layout_width="match_parent"
@@ -11,24 +13,29 @@
     </FrameLayout>
     <FrameLayout
         android:id="@+id/years"
+        android:layout_marginBottom="5dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        android:layout_weight="30" >
     </FrameLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="70"
+        android:weightSum="100"
         android:orientation="horizontal">
         <FrameLayout
             android:id="@+id/months"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="9">
+            android:layout_weight="90">
         </FrameLayout>
         <FrameLayout
             android:id="@+id/days"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="10">
         </FrameLayout>
     </LinearLayout>
 
