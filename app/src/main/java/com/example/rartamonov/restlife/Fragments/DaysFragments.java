@@ -21,6 +21,7 @@ public class DaysFragments extends Fragment{
     private TableLayout tableLayout;
     final private Calendar c = Calendar.getInstance();
     final private int currentMonth = c.get(Calendar.MONTH);
+    final private int currentDay = c.get(Calendar.DAY_OF_MONTH);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,7 +50,10 @@ public class DaysFragments extends Fragment{
                 textView.setTextSize(18);
                 if (i<currentMonth+1){
                     makeTextStrike(textView);
+                } else if ((i==currentMonth+1)&&(j<currentDay)){
+                    makeTextStrike(textView);
                 }
+
                 if ((i==2)&&(j>28)){
                     textView.setText("");
                 } else {
