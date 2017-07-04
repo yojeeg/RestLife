@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
-        android:layout_weight="90"
+        android:layout_weight="58"
         android:weightSum="100"
         android:orientation="horizontal">
         <FrameLayout
@@ -38,5 +38,11 @@
             android:layout_weight="10">
         </FrameLayout>
     </LinearLayout>
+    <FrameLayout
+        android:id="@+id/tasks"
+        android:layout_weight="32"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+    </FrameLayout>
 
 </LinearLayout>
