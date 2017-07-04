@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity implements DateBornFragment.
         YearsFragment yearsFragment = (YearsFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.years);
         if (yearsFragment != null) {
-            yearsFragment.showGrid(link);
+            //yearsFragment.showGrid(link);
+            yearsFragment.showTableYears(link);
         }
     }
 
