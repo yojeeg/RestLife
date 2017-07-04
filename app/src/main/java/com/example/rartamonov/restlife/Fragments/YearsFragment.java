@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.rartamonov.restlife.R;
@@ -20,6 +21,7 @@ public class YearsFragment extends Fragment{
     private Context context;
 
     GridView gvYears;
+    ProgressBar progressBar;
     ArrayAdapter<String> adapter;
     final private Calendar c = Calendar.getInstance();
     final private int currentYear = c.get(Calendar.YEAR);
@@ -47,12 +49,15 @@ public class YearsFragment extends Fragment{
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.years_frg, null);
         gvYears = (GridView) v.findViewById(R.id.gvYears);
+        progressBar = (ProgressBar)v.findViewById(R.id.progressBar);
 
         return v;
     }
 
     public void showGrid(String[] years){
 
+        progressBar.setMax(years.length);
+        progressBar.setProgress(currentYear-Integer.valueOf(years[0]));
         adapter = new ArrayAdapter<String>(context, R.layout.years_item, R.id.tvText, years){
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
