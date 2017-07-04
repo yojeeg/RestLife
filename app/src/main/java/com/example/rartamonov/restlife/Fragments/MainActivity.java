@@ -18,10 +18,11 @@ public class MainActivity extends AppCompatActivity implements DateBornFragment.
         android.support.v4.app.Fragment daysFragment = new DaysFragments();
 
         android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.date_born, dateBornFragment);
         fragmentTransaction.add(R.id.years, yearsFragment);
         fragmentTransaction.add(R.id.months, monthsFragment);
         fragmentTransaction.add(R.id.days, daysFragment);
+        fragmentTransaction.add(R.id.date_born, dateBornFragment); // в данном фрагменте при запуске
+        // происходит заполнение фрагментов years, months и days, поэтому в списке он стоит ПОСЛЕ них
         fragmentTransaction.commit();
     }
 
