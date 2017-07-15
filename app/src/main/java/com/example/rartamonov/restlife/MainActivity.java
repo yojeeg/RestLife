@@ -1,8 +1,13 @@
-package com.example.rartamonov.restlife.Fragments;
+package com.example.rartamonov.restlife;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.rartamonov.restlife.Fragments.DateBornFragment;
+import com.example.rartamonov.restlife.Fragments.DaysFragments;
+import com.example.rartamonov.restlife.Fragments.MonthsFragment;
+import com.example.rartamonov.restlife.Fragments.TasksFragment;
+import com.example.rartamonov.restlife.Fragments.YearsFragment;
 import com.example.rartamonov.restlife.R;
 
 public class MainActivity extends AppCompatActivity implements DateBornFragment.OnYearsFragmentInteractionListener, YearsFragment.OnMonthsFragmentInteractionListener, MonthsFragment.OnDaysFragmentInteractionListener {

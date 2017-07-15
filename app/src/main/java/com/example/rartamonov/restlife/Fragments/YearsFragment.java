@@ -165,7 +165,7 @@ public class YearsFragment extends Fragment{
 //        gvYears.setStretchMode(GridView.STRETCH_COLUMN_WIDTH );
 //    }
 
-    interface OnMonthsFragmentInteractionListener {
+    public interface OnMonthsFragmentInteractionListener {
 
         void onMonthsFragmentInteraction();
     }

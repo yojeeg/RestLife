@@ -117,7 +117,7 @@ public class DateBornFragment extends Fragment{
                     + " должен реализовывать интерфейс OnFragmentInteractionListener");
         }
     }
-    interface OnYearsFragmentInteractionListener {
+    public interface OnYearsFragmentInteractionListener {
 
         void onYearsFragmentInteraction(String[] link);
     }

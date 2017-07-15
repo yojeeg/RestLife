@@ -99,7 +99,7 @@ public class MonthsFragment extends Fragment {
         gvMonths.setStretchMode(GridView.STRETCH_COLUMN_WIDTH );
     }
 
-    interface OnDaysFragmentInteractionListener {
+   public interface OnDaysFragmentInteractionListener {
 
         void onDaysFragmentInteraction();
     }
