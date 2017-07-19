@@ -1,8 +1,10 @@
-package com.example.rartamonov.restlife;
+package com.example.rartamonov.restlife.Firebase;
 
 import android.app.ProgressDialog;
 import android.support.annotation.VisibleForTesting;
 import android.support.v7.app.AppCompatActivity;
+
+import com.example.rartamonov.restlife.R;
 
 public class BaseActivity extends AppCompatActivity {
 
