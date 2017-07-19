@@ -1,8 +1,14 @@
 package com.example.rartamonov.restlife;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.rartamonov.restlife.Firebase.EmailPasswordActivity;
 import com.example.rartamonov.restlife.Fragments.DateBornFragment;
 import com.example.rartamonov.restlife.Fragments.DaysFragments;
 import com.example.rartamonov.restlife.Fragments.MonthsFragment;
@@ -11,6 +17,8 @@ import com.example.rartamonov.restlife.Fragments.YearsFragment;
 import com.example.rartamonov.restlife.R;
 
 public class MainActivity extends AppCompatActivity implements DateBornFragment.OnYearsFragmentInteractionListener, YearsFragment.OnMonthsFragmentInteractionListener, MonthsFragment.OnDaysFragmentInteractionListener {
+
+    Button btnReg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +41,21 @@ public class MainActivity extends AppCompatActivity implements DateBornFragment.
         fragmentTransaction.commit();
     }
 
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.activity_main, null);
+
+        btnReg = (Button)v.findViewById(R.id.btnReg);
+        btnReg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, EmailPasswordActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        return v;
+    }
     @Override
     public void onYearsFragmentInteraction(String[] link) {
         YearsFragment yearsFragment = (YearsFragment) getSupportFragmentManager()
