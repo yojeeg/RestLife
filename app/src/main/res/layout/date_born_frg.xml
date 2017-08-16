@@ -16,4 +16,13 @@
         android:layout_margin="5dp"
         style="@android:style/TextAppearance.Medium"
         android:id="@+id/tvDate"/>
+
+    <TextView
+        android:id="@+id/user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        style="@android:style/TextAppearance.Medium"
+        android:gravity="end"
+        android:text="Name" />
 </LinearLayout>

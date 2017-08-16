@@ -19,6 +19,10 @@ android {
     }
 }
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:design:25.3.1'
@@ -53,7 +57,7 @@ dependencies {
     // Facebook Android SDK (only required for Facebook Login)
     // Used in FacebookLoginActivity. This is only compiled into the minSdkJellybean variant of this
     // app. You can build a 'minSdkGingerbread' variant to test on devices with 9 <= SDK <= 15.
-    compile('com.facebook.android:facebook-android-sdk:4.9.0')
+    compile 'com.facebook.android:facebook-android-sdk:[4,5)'
     compile('com.android.support:customtabs:25.3.1')
 
 }

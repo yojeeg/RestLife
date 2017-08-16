@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements DateBornFragment.
 
     Context context;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements DateBornFragment.
 
         return v;
     }
+
     @Override
     public void onYearsFragmentInteraction(String[] link) {
         YearsFragment yearsFragment = (YearsFragment) getSupportFragmentManager()
@@ -81,4 +83,6 @@ public class MainActivity extends AppCompatActivity implements DateBornFragment.
             daysFragments.showTableDays();
         }
     }
+
+
 }

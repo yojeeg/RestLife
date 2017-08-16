@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.example.rartamonov.restlife.Dialogs.DatePicker;
 import com.example.rartamonov.restlife.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -25,6 +27,8 @@ public class DateBornFragment extends Fragment{
     private Context context;
     private FragmentActivity fragmentActivity;
     TextView tv;
+    private FirebaseAuth mAuth;
+    TextView userText;
     private OnYearsFragmentInteractionListener mListener;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,6 +36,11 @@ public class DateBornFragment extends Fragment{
         View v = inflater.inflate(R.layout.date_born_frg, null);
 
         tv = (TextView)v.findViewById(R.id.tvDate);
+
+        userText = (TextView)v.findViewById(R.id.user);
+        mAuth = FirebaseAuth.getInstance();
+        final FirebaseUser user = mAuth.getCurrentUser();
+        userText.setText(getString(R.string.firebase_status_fmt, user.getDisplayName()));
 
         final Calendar c = Calendar.getInstance();
         int year = c.get(Calendar.YEAR);

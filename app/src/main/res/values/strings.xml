@@ -88,7 +88,7 @@
 
     <string name="instant_validation">(instant validation)</string>
 
-    <string name="firebase_status_fmt">Firebase User: %s</string>
+    <string name="firebase_status_fmt">You: %s</string>
 
     <string name="firebase_user_management">Firebase User Management</string>
 
@@ -122,8 +122,7 @@
 
     <string name="firebaseui_title_text">FirebaseUI Auth</string>
 
-    <string name="facebook_app_id">1223610697766256</string>
-
-    <string name="fb_login_protocol_scheme">fb1223610697766256</string>
+    <string name="facebook_app_id">1426785850761932</string>
+    <string name="fb_login_protocol_scheme">fb1426785850761932</string>
 
 </resources>
