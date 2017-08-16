@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.rartamonov.restlife.Dialogs.DatePicker;
@@ -29,6 +30,7 @@ public class DateBornFragment extends Fragment{
     TextView tv;
     private FirebaseAuth mAuth;
     TextView userText;
+    ImageButton img_out;
     private OnYearsFragmentInteractionListener mListener;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,6 +38,14 @@ public class DateBornFragment extends Fragment{
         View v = inflater.inflate(R.layout.date_born_frg, null);
 
         tv = (TextView)v.findViewById(R.id.tvDate);
+
+        img_out = (ImageButton)v.findViewById(R.id.img_out);
+        img_out.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAuth.signOut();
+            }
+        });
 
         userText = (TextView)v.findViewById(R.id.user);
         mAuth = FirebaseAuth.getInstance();

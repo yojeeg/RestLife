@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
@@ -9,11 +10,15 @@
         android:layout_height="wrap_content"
         android:text="@string/born_text_label"
         android:layout_margin="5dp"
+        android:layout_gravity="center"
+        android:gravity="start"
         style="@android:style/TextAppearance.Medium"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
+        android:layout_gravity="center"
+        android:gravity="start"
         style="@android:style/TextAppearance.Medium"
         android:id="@+id/tvDate"/>
 
@@ -21,8 +26,16 @@
         android:id="@+id/user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         style="@android:style/TextAppearance.Medium"
+        android:layout_gravity="center"
         android:gravity="end"
         android:text="Name" />
+
+    <ImageButton
+        android:id="@+id/img_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="end"
+        app:srcCompat="@drawable/ic_sign_out" />
 </LinearLayout>
