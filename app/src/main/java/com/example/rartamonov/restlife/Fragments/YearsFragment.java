@@ -59,8 +59,11 @@ public class YearsFragment extends Fragment{
     }
 
     public void showTableYears(String[] years){
+
+        if (tableYears == null) return; // FIX ME разобраться, почему приходит null на втором повороте экрана
+
         progressBar.setMax(years.length);
-        progressBar.setProgress(currentYear-Integer.valueOf(years[0]));
+            progressBar.setProgress(currentYear - Integer.valueOf(years[0]));
 
         tableYears.removeAllViews();
 
