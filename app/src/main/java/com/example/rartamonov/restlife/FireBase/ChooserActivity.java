@@ -18,9 +18,10 @@ public class ChooserActivity extends AppCompatActivity implements AdapterView.On
 
     private static final Class[] CLASSES = new Class[]{
             GoogleSignInActivity.class,
-            //FacebookLoginActivity.class,
+            FacebookLoginActivity.class,
             TwitterLoginActivity.class,
             EmailPasswordActivity.class,
+            FirebaseUIActivity.class,
             PhoneAuthActivity.class
     };
 
@@ -29,6 +30,7 @@ public class ChooserActivity extends AppCompatActivity implements AdapterView.On
             R.string.desc_facebook_login,
             R.string.desc_twitter_login,
             R.string.desc_emailpassword,
+            R.string.desc_firebase_ui,
             R.string.desc_phone_auth,
     };
 

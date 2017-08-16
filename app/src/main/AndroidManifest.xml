@@ -24,6 +24,8 @@
         <activity android:name=".FireBase.GoogleSignInActivity"></activity>
         <activity android:name=".FireBase.PhoneAuthActivity"></activity>
         <activity android:name=".FireBase.TwitterLoginActivity"></activity>
+        <activity android:name=".FireBase.FacebookLoginActivity"></activity>
+        <activity android:name=".FireBase.FirebaseUIActivity"></activity>
     </application>
 
 </manifest>

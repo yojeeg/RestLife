@@ -118,4 +118,12 @@
 
     <string name="twitter_consumer_secret"></string>
 
+    <string name="firebaseui_status_fmt">Firebase User: %s</string>
+
+    <string name="firebaseui_title_text">FirebaseUI Auth</string>
+
+    <string name="facebook_app_id">1223610697766256</string>
+
+    <string name="fb_login_protocol_scheme">fb1223610697766256</string>
+
 </resources>
