@@ -1,5 +1,6 @@
 package com.example.rartamonov.restlife.FireBase;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rartamonov.restlife.FireBase.BaseActivity;
+import com.example.rartamonov.restlife.MainActivity;
 import com.example.rartamonov.restlife.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -195,6 +197,8 @@ public class EmailPasswordActivity extends BaseActivity implements
     private void updateUI(FirebaseUser user) {
         hideProgressDialog();
         if (user != null) {
+
+            startActivity(new Intent(EmailPasswordActivity.this, MainActivity.class));
             mStatusTextView.setText(getString(R.string.emailpassword_status_fmt,
                     user.getEmail(), user.isEmailVerified()));
             mDetailTextView.setText(getString(R.string.firebase_status_fmt, user.getUid()));
